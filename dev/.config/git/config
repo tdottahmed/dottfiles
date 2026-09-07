@@ -8,8 +8,8 @@
   preloadindex = true
 
 [user]
-  email = mtmsujon@gmail.com
-  name = Tanbir
+  email = pondit.tanbir@gmail.com
+  name = Tanbir Ahmed
 
 [branch]
   sort = -committerdate
