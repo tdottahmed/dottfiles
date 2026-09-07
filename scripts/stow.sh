@@ -18,6 +18,13 @@ list_packages() {
         | grep -v -x -f ./.installignore
 }
 
+# stow "folds" a package directory into a single symlink when the target does
+# not exist yet. For ~/.ssh that would point the whole directory at this repo,
+# and the next ssh-keygen would write a private key straight into git. Creating
+# the directory first forces stow to link the individual config file instead.
+mkdir -p "$HOME/.ssh/config.d"
+chmod 700 "$HOME/.ssh" "$HOME/.ssh/config.d"
+
 info "Stowing config packages into $HOME ..."
 failed=()
 while read -r pkg; do

@@ -4,3 +4,8 @@ tmux/.config/tmux/plugins/*
 
 # composer installs these
 composer/.config/composer/vendor
+
+# ssh: only the sanitized config is tracked. Never private keys, never the
+# client/production inventory that lives in ~/.ssh/config.d/.
+ssh/.ssh/*
+!ssh/.ssh/config

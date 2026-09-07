@@ -42,6 +42,7 @@ git switch fedora && git merge main
 | `composer`  | `~/.config/composer`         | global composer packages                    |
 | `dev`       | `~/.config/git`, `~/env`     | git config, docker dev stack, podman policy |
 | `bin`       | `~/.local/bin`               | personal scripts (`vhost`)                  |
+| `ssh`       | `~/.ssh/config`              | ssh defaults + github (clients stay local)  |
 
 Non-package directories, never symlinked (see `.installignore`):
 
@@ -72,6 +73,28 @@ Create a directory whose layout mirrors `$HOME`, then re-run `scripts/stow.sh`:
 ```
 foo/.config/foo/config   ->   ~/.config/foo/config
 ```
+
+## SSH
+
+`ssh/.ssh/config` holds only what is safe to publish: sensible defaults and the
+`github.com` entry. Real hosts — client and production servers, with their
+usernames, ports and keys — live in `~/.ssh/config.d/*.conf`, which is **not**
+tracked here and never should be. `.gitignore` enforces that: everything under
+`ssh/.ssh/` is ignored except `config` itself.
+
+The tracked file pulls the rest in:
+
+```sshconfig
+Include ~/.ssh/config.d/*.conf
+```
+
+Ordering is deliberate. ssh keeps the *first* value it sees for each keyword, so
+`Include` comes first (host-specific settings win) and `Host *` comes last
+(defaults only fill in the gaps).
+
+On a new machine `scripts/stow.sh` creates `~/.ssh/config.d` before stowing, then
+symlinks `config` into place. Restore your own `config.d/*.conf` from backup —
+without it, ssh still works, you just have no host shortcuts.
 
 ## Dev stack
 
