@@ -1,18 +1,49 @@
-# Packages installed by scripts/install-packages.sh
-#
-# One package name per line. Blank lines and #-comments are ignored.
-# This file is the DISTRO-AGNOSTIC baseline on `main` -- it only lists packages
-# whose name is identical on dnf and apt. Distro branches (fedora, ubuntu,
-# debian) replace this file with the full list using that distro's names.
+# Fedora packages (dnf). One per line, #-comments ignored.
 
+# Core shell / tools
 git
 zsh
 tmux
+stow
 curl
 wget
-stow
 unzip
+ripgrep
+fd-find
+fzf
+jq
+htop
+tree
+
+# Terminal + editors
 kitty
-vim
+vim-enhanced
 neovim
+
+# Build toolchain (needed by nvim treesitter, mason, native gems)
+gcc
+gcc-c++
+make
+cmake
+python3-pip
+
+# Fonts
+fontconfig
+
+# Languages
 golang
+php-cli
+php-common
+php-mbstring
+php-xml
+php-pdo
+php-mysqlnd
+php-pgsql
+php-gd
+php-zip
+php-intl
+composer
+
+# Containers
+podman
+podman-compose
