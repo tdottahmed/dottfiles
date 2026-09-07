@@ -7,7 +7,7 @@
 # Check out the branch matching your distro first (fedora, ubuntu, debian).
 set -euo pipefail
 
-DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 # shellcheck source=lib/colors.sh
 source "$DOTFILES/lib/colors.sh"
 # shellcheck source=lib/distro.sh

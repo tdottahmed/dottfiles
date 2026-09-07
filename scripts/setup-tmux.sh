@@ -2,7 +2,7 @@
 # Installs TPM (Tmux Plugin Manager).
 set -euo pipefail
 
-DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")/.." && pwd)"
 # shellcheck source=../lib/colors.sh
 source "$DOTFILES/lib/colors.sh"
 
