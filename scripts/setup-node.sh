@@ -2,7 +2,7 @@
 # Installs nvm and the latest LTS Node.
 set -euo pipefail
 
-DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")/.." && pwd)"
 # shellcheck source=../lib/colors.sh
 source "$DOTFILES/lib/colors.sh"
 
