@@ -1,5 +1,5 @@
-.gitignore
 .git
-user
-system
-
+.github
+lib
+scripts
+distro

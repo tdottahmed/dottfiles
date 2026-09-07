@@ -10,7 +10,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TMUX_DIR="$(dirname "$SCRIPT_DIR")"
 
 # Base URL for raw GitHub files
-BASE_URL="https://raw.githubusercontent.com/itsemon245/dotfiles/main/tmux"
+BASE_URL="https://raw.githubusercontent.com/tdottahmed/dottfiles/main/tmux"
 
 # Main config file
 TMUX_CONF_URL="$BASE_URL/.tmux.conf"

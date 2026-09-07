@@ -1,0 +1,4 @@
+# Docs and the standalone remote installer stay in the repo, not in $HOME.
+^/\.stow-local-ignore
+.*\.md
+^/tmux-installer

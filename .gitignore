@@ -1,5 +1,6 @@
+# tmux plugins are installed by TPM, only TPM itself is tracked
 tmux/.config/tmux/plugins/*
 !tmux/.config/tmux/plugins/tpm
+
+# composer installs these
 composer/.config/composer/vendor
-others/.local/share/nvim
-others/.local/state/nvim
